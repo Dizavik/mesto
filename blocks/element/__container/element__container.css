@@ -1,0 +1,9 @@
+.element__container {
+  max-width: 246px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 25px 15px 31px 21px;
+}

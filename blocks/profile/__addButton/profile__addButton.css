@@ -1,0 +1,17 @@
+.profile__addbutton {
+  width: 150px;
+  height: 50px;
+  background: url(../../../images/Vector2.png) no-repeat center;
+  transition: 0.5s ease;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
+.profile__addbutton:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+  .profile__addbutton {
+    width: 282px;
+  }
+}

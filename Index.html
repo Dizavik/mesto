@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Проектная работа Потанина Никиты" />
+    <meta name="keywords" content="html, css, javascript" />
+    <meta name="author" content="Потанин Никита" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="Лого шапки" />
+      </header>
+      <main>
+        <section class="profile">
+          <div class="profile__container">
+            <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар профиля." />
+            <div class="profile__info">
+              <div class="profile__text">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <button class="profile__editbutton" type="button"></button>
+              </div>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+          </div>
+          <button class="profile__addbutton" type="button"></button>
+        </section>
+        <section class="elements">
+          <div class="element">
+            <img class="element__image" src="./images/Tokyo.jpg" alt="Картинка" />
+            <div class="element__container">
+              <h2 class="element__place">Токио</h2>
+              <button class="element__likeButton element__likeButton_active" type="button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="./images/Kyoto.jpg" alt="Картинка" />
+            <div class="element__container">
+              <h2 class="element__place">Киото</h2>
+              <button class="element__likeButton element__likeButton_active" type="button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="./images/Hakone.jpg" alt="Картинка" />
+            <div class="element__container">
+              <h2 class="element__place">Хаконе</h2>
+              <button class="element__likeButton element__likeButton_active" type="button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="./images/Hiroshima.jpg" alt="Картинка" />
+            <div class="element__container">
+              <h2 class="element__place">Хирошима</h2>
+              <button class="element__likeButton element__likeButton_active" type="button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="./images/Fuji.jpg" alt="Картинка" />
+            <div class="element__container">
+              <h2 class="element__place">Фудзи</h2>
+              <button class="element__likeButton element__likeButton_active" type="button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="./images/Shibuya.jpg" alt="Картинка" />
+            <div class="element__container">
+              <h2 class="element__place">Сибуя</h2>
+              <button class="element__likeButton element__likeButton_active" type="button"></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">© 2020 Mesto Russia</p>
+      </footer>
+
+      <section class="popup">
+        <button class="popup__closeButton" type="button"></button>
+        <form class="popup__container">
+          <h1 class="popup__title">Редактирова профиль</h1>
+          <input class="popup__field field1" type="text" name="name" />
+          <input class="popup__field field2" type="text" name="about" />
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </section>
+      <script src="/scripts/index.js"></script>
+    </div>
+  </body>
+</html>
