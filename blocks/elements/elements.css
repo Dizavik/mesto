@@ -4,6 +4,8 @@
   gap: 20px 17px;
   grid-template-columns: repeat(auto-fit, max(282px));
   margin: auto;
+  padding-top: 50px;
+  justify-content: center;
 }
 @media screen and (max-width: 320px) {
   .elements {
