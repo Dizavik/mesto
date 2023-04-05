@@ -4,7 +4,7 @@
   border: 1px solid #ffffff;
   background: url(../../../images/editbutton.svg) no-repeat center;
   margin-left: 18px;
-  margin-top: 8px;
+  margin-top: 5px;
   box-sizing: border-box;
 }
 .profile__editbutton:hover {
@@ -16,7 +16,7 @@
   .profile__editbutton {
     width: 18px;
     height: 18px;
-    margin: 3px 0 0 10px;
+    margin: 0 0 0 10px;
     background-size: 7.5px;
   }
 }

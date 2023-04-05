@@ -10,4 +10,4 @@ html, css, js
 
 # Ссылка на GitPages
 
-https://dizavik.github.io/mesto/Index.html
+https://dizavik.github.io/mesto/index.html

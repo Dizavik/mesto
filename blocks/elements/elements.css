@@ -7,10 +7,9 @@
   padding-top: 50px;
   justify-content: center;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .elements {
-    margin-left: 19px;
-    margin-right: 19px;
-    gap: 20px;
+    padding-top: 36px;
+    row-gap: 20px;
   }
 }

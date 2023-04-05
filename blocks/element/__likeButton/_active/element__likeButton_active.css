@@ -1,11 +1,7 @@
 .element__likeButton_active {
   width: 22px;
   height: 19px;
-  background: url(../../../images/likeBlack.svg) no-repeat center;
+  background: url(../../../../images/Blacklike.svg) no-repeat center;
   border: none;
   cursor: pointer;
-}
-.element__likeButton_active:hover {
-  transition: 0.5s ease;
-  opacity: 0.6;
 }

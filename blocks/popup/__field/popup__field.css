@@ -1,16 +1,16 @@
 .popup__field {
   padding: 0;
-  width: 358px;
-  height: 36px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   color: #000000;
+  padding-bottom: 8px;
 }
 @media (max-width: 767px) {
   .popup__field {
-    width: 238px;
+    width: 100%;
   }
 }
