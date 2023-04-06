@@ -1,6 +1,6 @@
 .popup__form {
-  position: fixed;
   width: 430px;
+  height: 330px;
   background: #ffffff;
   border-radius: 10px;
   display: flex;

@@ -6,6 +6,7 @@
   margin-left: 18px;
   margin-top: 5px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 .profile__editbutton:hover {
   transition: 0.5s ease;

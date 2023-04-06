@@ -9,8 +9,8 @@
   text-align: center;
   color: #ffffff;
   transition: opacity 0.3s linear;
-  padding-bottom: 18px;
-  padding-top: 14px;
+  padding-bottom: 16px;
+  padding-top: 12px;
   cursor: pointer;
 }
 
@@ -21,10 +21,8 @@
 
 @media screen and (max-width: 767px) {
   .popup__submit {
-    width: 238px;
-    height: 46px;
     font-size: 14px;
     line-height: 17px;
-    padding-bottom: 14px;
+    padding-bottom: 17px;
   }
 }

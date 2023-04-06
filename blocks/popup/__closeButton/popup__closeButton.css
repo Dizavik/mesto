@@ -1,7 +1,4 @@
 .popup__closeButton {
-  position: absolute;
-  top: -40px;
-  right: -40px;
   background: url(../../../images/Close.svg) center no-repeat;
   background-repeat: no-repeat;
   background-size: contain;
@@ -14,6 +11,7 @@
   border: none;
   object-fit: cover;
   object-position: center;
+  margin-left: 465px;
 }
 
 .popup__closeButton:hover {
@@ -25,7 +23,6 @@
   .popup__closeButton {
     width: 20px;
     height: 20px;
-    margin: 0 0 16px;
-    right: 0;
+    margin: 0 0 16px 265px;
   }
 }

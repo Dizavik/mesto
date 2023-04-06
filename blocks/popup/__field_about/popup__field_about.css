@@ -1,9 +1,9 @@
-.popup__field-about {
+.popup__field_about {
   margin-bottom: 48px;
 }
 
 @media screen and (max-width: 767px) {
-  .popup__field-about {
+  .popup__field_about {
     margin-bottom: 43px;
   }
 }
