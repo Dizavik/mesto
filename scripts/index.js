@@ -1,49 +1,20 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-const popup = document.querySelector('.popup');
+const profileTitle = document.querySelector('.profile__title');
+const profileEditButton = document.querySelector('.profile__edit-button');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+const addCardButton = document.querySelector('.profile__add-button');
 
 const popupProfile = document.querySelector('.popup_type_profile');
-
-const popupContainer = document.querySelector('.popup__container');
-const profileEditButton = document.querySelector('.profile__editbutton');
-const addCardButton = document.querySelector('.profile__addbutton');
-const closePopupButton = document.querySelector('.popup__closeButton');
-const profileTitle = document.querySelector('.profile__title');
-const profileSubtitle = document.querySelector('.profile__subtitle');
-const nameInput = document.querySelector('.popup__field_type_name');
-const aboutInput = document.querySelector('.popup__field_type_about');
+const closePopupButton = document.querySelector('.popup__close-button');
+const popupForm = document.querySelector('.popup__form');
+const nameInput = popupForm.querySelector('.popup__field_type_name');
+const aboutInput = popupForm.querySelector('.popup__field_type_about');
 const submitPopupButton = document.querySelector('.popup__submit');
 
 const popupCard = document.querySelector('.popup_type_card');
-const closePopupButtonCard = popupCard.querySelector('.popup__closeButton');
+const closePopupButtonCard = popupCard.querySelector('.popup__close-button');
 const formCard = popupCard.querySelector('.popup__container');
 const placeField = formCard.querySelector('.popup__field_type_place');
-const UrlField = formCard.querySelector('.popup__field_type_url');
+const urlField = formCard.querySelector('.popup__field_type_url');
 
 const cardsElements = document.querySelector('.elements');
 const templateElement = document.querySelector('.template__element');
@@ -51,7 +22,7 @@ const templateElement = document.querySelector('.template__element');
 const popupImg = document.querySelector('.popup_type_img');
 const popupImgFig = popupImg.querySelector('.popup__fig');
 const popupImgCaption = popupImg.querySelector('.popup__caption');
-const popupImgClose = popupImg.querySelector('.popup__closeButton');
+const popupImgClose = popupImg.querySelector('.popup__close-button');
 
 const openPopup = popup => {
   popup.classList.add('popup_opened');
@@ -67,7 +38,7 @@ const createElement = card => {
   const elemImg = cardElement.querySelector('.element__image');
   const cardName = cardElement.querySelector('.element__place');
   const deleteButton = cardElement.querySelector('.elements__delete');
-  const likeButton = cardElement.querySelector('.element__likeButton');
+  const likeButton = cardElement.querySelector('.element__like-button');
 
   elemImg.src = card.link;
   elemImg.alt = card.name;
@@ -80,7 +51,7 @@ const createElement = card => {
 
   //like
   likeButton.addEventListener('click', () => {
-    likeButton.classList.toggle('element__likeButton_active');
+    likeButton.classList.toggle('element__like-button_active');
   });
 
   //zoom image
@@ -99,7 +70,7 @@ popupImgClose.addEventListener('click', () => {
 });
 
 initialCards.forEach(item => {
-  cardsElements.prepend(createElement(item));
+  cardsElements.append(createElement(item));
 });
 
 addCardButton.addEventListener('click', () => {
@@ -115,7 +86,7 @@ const handleElementFormSubmit = e => {
   e.preventDefault();
   const ElementData = {
     name: placeField.value,
-    link: UrlField.value
+    link: urlField.value
   };
   cardsElements.prepend(createElement(ElementData));
   closePopup(popupCard);
@@ -124,7 +95,7 @@ formCard.addEventListener('submit', handleElementFormSubmit);
 
 //profile
 
-handleFormSubmit = e => {
+handleProfileFormSubmit = e => {
   e.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = aboutInput.value;
@@ -141,4 +112,4 @@ closePopupButton.addEventListener('click', () => {
   closePopup(popupProfile);
 });
 
-popupContainer.addEventListener('submit', handleFormSubmit);
+popupForm.addEventListener('submit', handleProfileFormSubmit);
