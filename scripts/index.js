@@ -4,8 +4,8 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 const addCardButton = document.querySelector('.profile__add-button');
 
 const popupProfile = document.querySelector('.popup_type_profile');
-const closePopupButton = document.querySelector('.popup__close-button');
-const popupForm = document.querySelector('.popup__form');
+const closePopupButton = popupProfile.querySelector('.popup__close-button');
+const popupForm = popupProfile.querySelector('.popup__form');
 const nameInput = popupForm.querySelector('.popup__field_type_name');
 const aboutInput = popupForm.querySelector('.popup__field_type_about');
 const submitPopupButton = document.querySelector('.popup__submit');
@@ -37,7 +37,7 @@ const createElement = card => {
   const cardElement = templateElement.content.querySelector('.element').cloneNode(true);
   const elemImg = cardElement.querySelector('.element__image');
   const cardName = cardElement.querySelector('.element__place');
-  const deleteButton = cardElement.querySelector('.elements__delete');
+  const deleteButton = cardElement.querySelector('.element__delete');
   const likeButton = cardElement.querySelector('.element__like-button');
 
   elemImg.src = card.link;
