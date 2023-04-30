@@ -1,3 +1,5 @@
+const popupElements = document.querySelectorAll('.popup');
+
 const profileTitle = document.querySelector('.profile__title');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileSubtitle = document.querySelector('.profile__subtitle');
@@ -29,7 +31,23 @@ const openPopup = popup => {
 };
 const closePopup = popup => {
   popup.classList.remove('popup_opened');
+  document.addEventListener('keydown', closePopupEscape);
 };
+
+function closePopupEscape(evt) {
+  if (evt.key === 'Escape') {
+    const popupEscape = document.querySelector('.popup_opened');
+    closePopup(popupEscape);
+  }
+}
+
+popupElements.forEach(popup => {
+  popup.addEventListener('click', evt => {
+    if (evt.target === evt.currentTarget) {
+      closePopup(popup);
+    }
+  });
+});
 
 //Elements
 
@@ -90,6 +108,7 @@ const handleElementFormSubmit = e => {
   };
   cardsElements.prepend(createElement(ElementData));
   closePopup(popupCard);
+  e.target.reset();
 };
 formCard.addEventListener('submit', handleElementFormSubmit);
 
@@ -113,3 +132,5 @@ closePopupButton.addEventListener('click', () => {
 });
 
 popupForm.addEventListener('submit', handleProfileFormSubmit);
+
+enableValidation(validationSet);
