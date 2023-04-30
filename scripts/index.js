@@ -27,11 +27,12 @@ const popupImgCaption = popupImg.querySelector('.popup__caption');
 const popupImgClose = popupImg.querySelector('.popup__close-button');
 
 const openPopup = popup => {
+  document.addEventListener('keydown', closePopupEscape);
   popup.classList.add('popup_opened');
 };
 const closePopup = popup => {
   popup.classList.remove('popup_opened');
-  document.addEventListener('keydown', closePopupEscape);
+  document.removeEventListener('keydown', closePopupEscape);
 };
 
 function closePopupEscape(evt) {
