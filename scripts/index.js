@@ -94,6 +94,7 @@ initialCards.forEach(item => {
 
 addCardButton.addEventListener('click', () => {
   openPopup(popupCard);
+  disableButton(submitButton, set.disableButtonClass); //Я просидел 2 часа, перепробовал всё что мог, не работает, и через ресет, и параметры разные передавал, и через импорт пробовал, не работает
 });
 
 closePopupButtonCard.addEventListener('click', () => {
