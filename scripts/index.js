@@ -17,6 +17,7 @@ const closePopupButtonCard = popupCard.querySelector('.popup__close-button');
 const formCard = popupCard.querySelector('.popup__container');
 const placeField = formCard.querySelector('.popup__field_type_place');
 const urlField = formCard.querySelector('.popup__field_type_url');
+const submitPopupButtonCard = popupCard.querySelector('.popup__submit');
 
 const cardsElements = document.querySelector('.elements');
 const templateElement = document.querySelector('.template__element');
@@ -94,7 +95,7 @@ initialCards.forEach(item => {
 
 addCardButton.addEventListener('click', () => {
   openPopup(popupCard);
-  disableButton(submitButton, set.disableButtonClass); //Я просидел 2 часа, перепробовал всё что мог, не работает, и через ресет, и параметры разные передавал, и через импорт пробовал, не работает
+  disableButton(submitPopupButtonCard, 'popup__submit-button_disable');
 });
 
 closePopupButtonCard.addEventListener('click', () => {
