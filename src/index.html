@@ -6,16 +6,19 @@
     <meta name="description" content="Проектная работа Потанина Никиты" />
     <meta name="keywords" content="html, css, javascript" />
     <meta name="author" content="Потанин Никита" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="Лого шапки" />
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Лого шапки" />
     </header>
     <main class="main">
       <section class="profile">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар профиля." />
+        <img
+          class="profile__avatar"
+          src="<%=require('./images/avatar.jpg')%>"
+          alt="Аватар профиля."
+        />
         <div class="profile__info">
           <div class="profile__text">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -34,7 +37,7 @@
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="popupFormProfile" novalidate>
+        <form class="popup__form popup__form_edit" name="popupFormProfile" novalidate>
           <input
             class="popup__field popup__field_type_name"
             type="text"
@@ -42,9 +45,10 @@
             placeholder="Ваше имя"
             minlength="2"
             maxlength="40"
+            id="name"
             required
           />
-          <span class="popup__error popup__error_type_name"></span>
+          <span id="err-name" class="popup__error popup__error_type_name"></span>
           <input
             class="popup__field popup__field_type_about"
             type="text"
@@ -52,9 +56,10 @@
             placeholder="О себе"
             minlength="2"
             maxlength="200"
+            id="detail"
             required
           />
-          <span class="popup__error popup__error_type_about"></span>
+          <span id="err-detail" class="popup__error popup__error_type_about"></span>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
       </div>
@@ -63,7 +68,7 @@
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form" name="popupFormCard" novalidate>
+        <form class="popup__form popup__form_add" name="popupFormCard" novalidate>
           <input
             class="popup__field popup__field_type_place"
             type="text"
@@ -71,17 +76,19 @@
             maxlength="30"
             placeholder="Название"
             name="title"
+            id="name-image"
             required
           />
-          <span class="popup__error popup__error_type_title"></span>
+          <span id="err-name-image" class="popup__error popup__error_type_title"></span>
           <input
             class="popup__field popup__field_type_url"
             type="url"
             name="url"
             placeholder="Ссылка на картинку"
+            id="link"
             required
           />
-          <span class="popup__error popup__error_type_url"></span>
+          <span id="err-link" class="popup__error popup__error_type_url"></span>
           <button class="popup__submit" type="submit">Создать</button>
         </form>
       </div>
@@ -105,8 +112,5 @@
         </div>
       </article>
     </template>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/constants.js"></script>
-    <script src="./scripts/index.js"></script>
   </body>
 </html>
