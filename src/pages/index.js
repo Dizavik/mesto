@@ -7,14 +7,8 @@ import {
   profileEditButton,
   profileSubtitle,
   addCardButton,
-  popupProfile,
-  popupForm,
-  nameInput,
-  aboutInput,
   popupAddForm,
   popupEddForm,
-  popupCard,
-  formCard,
   popupProfileSelector,
   popupCardSelector,
   templateElement,
@@ -42,15 +36,15 @@ const section = new Section(
   },
   elements
 );
-section.createCardFromArray();
+section.renderItems();
 
-const popupOpenProfile = new PopupWithForm(popupProfileSelector, object => {
-  userInfo.setUserInfo(object);
+const popupOpenProfile = new PopupWithForm(popupProfileSelector, inputValues => {
+  userInfo.setUserInfo(inputValues);
   popupOpenProfile.close();
 });
 
-const popupAddCard = new PopupWithForm(popupCardSelector, object => {
-  section.addItem(object);
+const popupAddCard = new PopupWithForm(popupCardSelector, inputValues => {
+  section.addItem(inputValues);
   popupAddCard.close();
 });
 
