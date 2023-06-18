@@ -1,4 +1,7 @@
 {
+  "repository": {
+    "url": "git+https://github.com/dizavik/mesto.git"
+  },
   "homepage": "https://dizavik.github.io/mesto/ ",
   "name": "mesto",
   "version": "1.0.0",
