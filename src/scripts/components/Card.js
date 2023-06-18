@@ -14,10 +14,10 @@ export default class Card {
     this._openImagePopup = openImagePopup;
     this._openDeletePopup = openDeletePopup;
     this._cloneElement = this._getTemplateClone();
-    this._trashElement = this._cloneElement.querySelector('.element__delete');
-    this._photoElement = this._cloneElement.querySelector('.element__image');
-    this._likeButtonElement = this._cloneElement.querySelector('.element__like-button');
-    this._titleElement = this._cloneElement.querySelector('.element__place');
+    this._trashElement = this._cloneElement.querySelector('.elements__delete-button');
+    this._photoElement = this._cloneElement.querySelector('.elements__photo');
+    this._likeButtonElement = this._cloneElement.querySelector('.elements__like-button');
+    this._titleElement = this._cloneElement.querySelector('.elements__title');
     this._counter = this._cloneElement.querySelector('.elements__like-counter');
     this._switchLike = switchLike;
   }
@@ -25,7 +25,7 @@ export default class Card {
   _getTemplateClone() {
     return document
       .querySelector(this._selectorTemplate)
-      .content.querySelector('.element')
+      .content.querySelector('.elements__card-container')
       .cloneNode(true); // возвращает клонированную разметку
   }
 
@@ -46,7 +46,7 @@ export default class Card {
   _checkLikeQuantity() {
     this._likes.forEach(item => {
       if (item._id === this._myId) {
-        this._likeButtonElement.classList.add('element__like-button_active');
+        this._likeButtonElement.classList.add('elements__like-button_active');
         return;
       }
     });

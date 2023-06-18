@@ -100,7 +100,7 @@ function createNewCard(element) {
     popupImage.open,
     deleteCardPopup.open,
     (likeButtonElement, cardId) => {
-      if (likeButtonElement.classList.contains('element__like-button_active')) {
+      if (likeButtonElement.classList.contains('elements__like-button_active')) {
         api
           .removeLikes(cardId)
           .then(res => {
