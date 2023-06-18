@@ -125,31 +125,12 @@ const section = new Section(element => {
   section.addItemAppend(createNewCard(element));
 }, cardContainerSelector);
 
-//создаем экземпляр класса FormValidator для попапа редактирования и запускаем валидации
-const formProfileInfoValidator = new FormValidator(validationConfig, formEditProfileElement);
-formProfileInfoValidator.enableValidation();
-
-//создаем экземпляр класса FormValidator для попапа добавления карточки и запускаем валидации
-const formAddCardValidator = new FormValidator(validationConfig, formAddCardElement);
-formAddCardValidator.enableValidation();
-
-const formEditAvatarValidator = new FormValidator(validationConfig, formEditAvatarElement);
-formEditAvatarValidator.enableValidation();
-
-popupImage.setEventListeners();
-popupAddCard.setEventListeners();
-popupProfile.setEventListeners();
-popupEditAvatar.setEventListeners();
-deleteCardPopup.setEventListeners();
-
-//открытие попапа редактирования профиля при клике, введенные даные сохраняются, кнопка дизйблится
 popupEditButtonElement.addEventListener('click', () => {
   formProfileInfoValidator.resetErrorInput();
   popupProfile.setInputValue(userInfo.getUserInfo());
   popupProfile.open();
 });
 
-//открытие попапа добавления карточки, введенные даные не сохраняются, кнопка дизйблится
 popupAddButtonElement.addEventListener('click', () => {
   formAddCardValidator.resetErrorInput();
   popupAddCard.open();
@@ -172,3 +153,18 @@ Promise.all([api.getInfo(), api.getCards()])
     section.addCardFromArray(dataCard);
   })
   .catch(error => console.error(`Ошибка редактирования ${error}`));
+
+const formProfileInfoValidator = new FormValidator(validationConfig, formEditProfileElement);
+formProfileInfoValidator.enableValidation();
+
+const formAddCardValidator = new FormValidator(validationConfig, formAddCardElement);
+formAddCardValidator.enableValidation();
+
+const formEditAvatarValidator = new FormValidator(validationConfig, formEditAvatarElement);
+formEditAvatarValidator.enableValidation();
+
+popupImage.setEventListeners();
+popupAddCard.setEventListeners();
+popupProfile.setEventListeners();
+popupEditAvatar.setEventListeners();
+deleteCardPopup.setEventListeners();

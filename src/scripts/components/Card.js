@@ -70,7 +70,7 @@ export default class Card {
 
   deleteCardElement() {
     this._cloneElement.remove();
-    this._cloneElement = null; // убирает из дом дерева карточку
+    this._cloneElement = null;
   }
 
   createCard() {
