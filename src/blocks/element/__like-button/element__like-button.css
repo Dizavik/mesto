@@ -1,9 +1,11 @@
 .element__like-button {
   width: 22px;
   height: 19px;
-  background: url(../../../images/like.svg) no-repeat center;
+  background: url(../../../images/like.svg) no-repeat;
   border: none;
   flex-shrink: 0;
+  margin-bottom: 3px;
+  align-self: start;
 }
 .element__like-button:hover {
   transition: 0.5s ease;

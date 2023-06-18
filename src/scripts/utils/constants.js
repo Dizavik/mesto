@@ -1,80 +1,40 @@
-const initialCards = [
-  {
-    title: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    title: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    title: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    title: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    title: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    title: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+export const profileElement = document.querySelector('.profile');
+export const editAvatar = document.querySelector('.profile__avatar');
 
-const profileTitle = '.profile__title';
-const profileEditButton = document.querySelector('.profile__edit-button');
-const profileSubtitle = '.profile__subtitle';
-const addCardButton = document.querySelector('.profile__add-button');
+export const popupEditAvatarButtomElement = profileElement.querySelector('.profile__avatar-button');
+export const popupEditButtonElement = profileElement.querySelector('.profile__edit-button');
+export const popupAddButtonElement = profileElement.querySelector('.profile__add-button');
 
-const popupProfile = document.querySelector('.popup_type_profile');
-const popupForm = popupProfile.querySelector('.popup__form');
-const nameInput = popupForm.querySelector('.popup__field_type_name');
-const aboutInput = popupForm.querySelector('.popup__field_type_about');
+export const profilePopupElement = document.querySelector('.profile-popup');
+export const cardPopupElement = document.querySelector('.card-popup');
+export const editAvatarElement = document.querySelector('.avatar-popup');
 
-const popupAddForm = document.querySelector('.popup__form_add');
-const popupEddForm = document.querySelector('.popup__form_edit');
+export const formEditAvatarElement = editAvatarElement.querySelector('.popup__form');
+export const formEditProfileElement = profilePopupElement.querySelector('.popup__form');
+export const formAddCardElement = cardPopupElement.querySelector('.popup__form');
 
-const popupCard = document.querySelector('.popup_type_card');
-const formCard = popupCard.querySelector('.popup__container');
+export const selectorTemplate = '#cardTemplate';
+export const popupProfileSelector = '.profile-popup';
+export const popupImageSelector = '.popup_type_img';
+export const popupAvatarSelector = '.avatar-popup';
+export const popupAddCardSelector = '.card-popup';
+export const popupDeleteSelector = '.delete-popup';
+export const cardContainerSelector = '.elements';
 
-const popupProfileSelector = '.popup_type_profile';
-const popupCardSelector = '.popup_type_card';
-const templateElement = '.template__element';
-const popupTypeImage = '.popup_type_img';
-const elements = '.elements';
+export const profileNameSelector = '.profile__title';
+export const profileJobSelector = '.profile__subtitle';
+export const profileAvatarSelector = '.profile__avatar';
 
-const config = {
-  inputForms: document.forms,
-  inputSelector: '.popup__field',
-  errorSelectorTemplate: '.popup__error_type_',
-  submitButtonSelector: '.popup__submit',
-  disableButtonClass: 'popup__submit-button_disable',
-  inputErrorClass: 'popup__field_invalid',
-  textErrorClass: 'popup__error_visible'
-};
+export const defaultDeleteText = 'Дa';
 
-export {
-  initialCards,
-  config,
-  profileTitle,
-  profileEditButton,
-  profileSubtitle,
-  addCardButton,
-  popupProfile,
-  popupForm,
-  nameInput,
-  aboutInput,
-  popupAddForm,
-  popupEddForm,
-  popupCard,
-  formCard,
-  popupProfileSelector,
-  popupCardSelector,
-  templateElement,
-  popupTypeImage,
-  elements
+// переменая с объектом для валидации
+export const validationConfig = {
+  formSelector: '.popup__form', // все формы в документе
+  inputSelector: '.popup__field', // inputList
+  errorSelectorTemplate: '.popup__error_type_', // шаблон для разных инпутов
+  submitButtonSelector: '.popup__submit', //button
+
+  disabledButtonClass: 'popup__submit-button_disable', // button disabled
+  inputErrorClass: 'popup__field_invalid', // input
+  textErrorClass: 'popup__error_visible' // span
 };
