@@ -48,7 +48,7 @@ const deleteCardPopup = new PopupDeleteCard(popupDeleteSelector, ({ card, cardId
       deleteCardPopup.close();
     })
     .catch(error => console.error(`Ошибка удаления карточки ${error}`))
-    .finally(() => (deleteCardPopup._submitFunction.textContent = defaultDeleteText));
+    .finally(() => (deleteCardPopup.submitButton.textContent = defaultDeleteText));
 });
 
 const popupProfile = new PopupWithForm(popupProfileSelector, data => {
@@ -99,8 +99,8 @@ function createNewCard(element) {
     selectorTemplate,
     popupImage.open,
     deleteCardPopup.open,
-    (likeButtonElement, cardId) => {
-      if (likeButtonElement.classList.contains('elements__like-button_active')) {
+    (isLiked, cardId) => {
+      if (isLiked) {
         api
           .removeLikes(cardId)
           .then(res => {

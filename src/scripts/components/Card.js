@@ -20,6 +20,7 @@ export default class Card {
     this._titleElement = this._cloneElement.querySelector('.elements__title');
     this._counter = this._cloneElement.querySelector('.elements__like-counter');
     this._switchLike = switchLike;
+    this._isLiked = false;
   }
 
   _getTemplateClone() {
@@ -47,6 +48,7 @@ export default class Card {
     this._likes.forEach(item => {
       if (item._id === this._myId) {
         this._likeButtonElement.classList.add('elements__like-button_active');
+        this._isLiked = true;
         return;
       }
     });
@@ -60,7 +62,7 @@ export default class Card {
   }
 
   _handleLikeButton = () => {
-    this._switchLike(this._likeButtonElement, this._cardId);
+    this._switchLike(this._isLiked, this._cardId, this._counter);
   };
 
   toggleLike(likes) {
